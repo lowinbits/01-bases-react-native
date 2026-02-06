@@ -1,4 +1,5 @@
 import './App.css'
+//import { ObjectLiterals } from './typescript/ObjectLiterals'
 
 function App() {
 
@@ -7,6 +8,8 @@ function App() {
       <div>
         <h1> React + TSX
         </h1>
+        {/* <ObjectLiterals /> */}
+        {/*<BasicTypes />*/}
       </div>
       <p className="read-the-docs"> Click on the Vite and React logos to learn more
       </p>
