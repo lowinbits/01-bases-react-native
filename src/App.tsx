@@ -1,4 +1,3 @@
-import './App.css'
 //import { BasicFunctions } from './typescript/BasicFunctions'
 //import { ObjectLiterals } from './typescript/ObjectLiterals'
 
@@ -6,9 +5,10 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1> React + TSX
+      <div className="flex justify-center items-center h-svh">
+        <h1 className='text-4xl mb-5'> React + TSX
         </h1>
+
         {/* <BasicFunctions /> */}
         {/* <ObjectLiterals /> */}
         {/*<BasicTypes />*/}
