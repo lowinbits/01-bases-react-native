@@ -9,3 +9,7 @@ export interface Address {
     country: string;
     city?: string;
 }
+
+export interface AuthState {
+    hola:string;
+}
