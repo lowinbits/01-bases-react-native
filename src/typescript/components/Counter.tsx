@@ -1,14 +1,9 @@
-import { useState } from "react"
+import { useCounter } from "../hooks/useCounter"
 
 export const Counter = () => {
 
-    const [count, setCount] = useState<number>(10)
+    const { count, increaseBy } = useCounter()
 
-    const increaseBy = (value: number) => {
-        //setCount(count + value)
-        //setCount((current) => current + value)
-        setCount(Math.max(count + value, 0)) // Evita que el contador sea negativo
-    }
 
     return (
         <>
