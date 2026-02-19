@@ -1,3 +1,5 @@
+import { type Status } from '../enums/BasesEnums';
+
 export interface Person {
     age: number;
     firstName: string;
@@ -11,5 +13,13 @@ export interface Address {
 }
 
 export interface AuthState {
-    hola:string;
+    status: Status;
+    token?: string;
+    user?: User;
+    isChecking: boolean;
+}
+
+export interface User {
+    name: string;
+    email: string;
 }
