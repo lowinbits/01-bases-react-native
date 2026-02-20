@@ -17,6 +17,11 @@ export interface AuthState {
     token?: string;
     user?: User;
     isChecking: boolean;
+    isAuthenticated: boolean;
+
+    //Metodo
+    loginWithEmailPassword: (email: string, password: string) => void;
+    logout: () => void;
 }
 
 export interface User {

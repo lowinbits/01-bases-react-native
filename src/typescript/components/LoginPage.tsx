@@ -3,7 +3,7 @@ import { useAuthContext } from '../../context/AuthContext'
 
 export const LoginPage = () => {
 
-  const { isChecking } = useAuthContext();
+  const { isChecking, isAuthenticated, loginWithEmailPassword, user, logout } = useAuthContext();
 
   if (isChecking) {
     return <h1>
@@ -12,11 +12,28 @@ export const LoginPage = () => {
   }
 
   return (
-    <div>
-      <h3>
-        Login
-      </h3>
-      <span>{status}</span>
-    </div>
+    <>
+      {
+        isAuthenticated ? (
+          <>
+            <h3>Bievenido</h3>
+            <pre>
+              {JSON.stringify(user, null, 2)}
+            </pre>
+
+            <button 
+            onClick={() => logout()}
+            className='bg-blue-500 p-2 text-white rounded-xl mt-2'>Logout</button>
+          </>
+        ) : (
+          <>
+            <h3>Ingresar a la aplicacion</h3>
+            <button 
+            onClick={() => loginWithEmailPassword('lowin@gmail.com', '12345')}
+            className='bg-blue-500 p-2 text-white rounded-xl mt-2'>Login</button>
+          </>
+        )
+      }
+    </>
   )
 }
