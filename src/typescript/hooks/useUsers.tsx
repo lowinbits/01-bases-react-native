@@ -1,0 +1,19 @@
+import { useEffect, useState } from 'react'
+import type { User } from '../../interfaces/BasesInterfaces'
+import { loadUsersAction } from '../../actions/load-users.action'
+
+export const useUsers = () => {
+
+    const [users, setUsers] = useState<User[]>([])
+
+    useEffect(() => {
+        loadUsersAction(1).then(users => setUsers(users || []));
+    }, [])
+
+
+
+    return {
+        users,
+        setUsers
+    }
+}
