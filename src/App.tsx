@@ -2,7 +2,8 @@
 //import { ObjectLiterals } from './typescript/ObjectLiterals'
 
 import { AuthProvider } from "./context/AuthContext"
-import { UserPage } from "./typescript/components/UserPage"
+import { FormsPage } from "./typescript/components/FormsPage"
+//import { UserPage } from "./typescript/components/UserPage"
 //import { Counter } from "./typescript/components/Counter"
 //import { LoginPage } from "./typescript/components/LoginPage"
 
@@ -19,7 +20,8 @@ function App() {
           {/* <ObjectLiterals /> */}
           {/*<BasicTypes />*/}
           {/* <LoginPage/> */}
-          <UserPage />
+          {/* <UserPage /> */}
+          <FormsPage />
         </div>
         <p className="read-the-docs"> Click on the Vite and React logos to learn more
         </p>
