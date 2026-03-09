@@ -1,13 +1,12 @@
 import React from 'react'
 import { UserRow } from './UserRow'
 import { useUsers } from '../hooks/useUsers';
-//https://reqres.in/api/users?page=2
+
 export const UserPage = () => {
 
 
-    const { users } = useUsers();
+    const { users, nextPage, prevPage } = useUsers();
 
-    console.log(users)
     return (
         <>
             <h3>Usuarios:</h3>
@@ -21,13 +20,19 @@ export const UserPage = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <UserRow />
+                    {users.map(user => (
+                        <UserRow user={user} />
+                    ))}
                 </tbody>
             </table>
 
             <div className="flex justify-between w-[500px] mt-2">
-                <button className="bg-blue-500 p-2 text-white rounded-[5px]">Anteriores</button>
-                <button className="bg-blue-500 p-2 text-white rounded-[5px]">Siguientes</button>
+                <button
+                    onClick={prevPage}
+                    className="bg-blue-500 p-2 text-white rounded-[5px]">Anteriores</button>
+                <button
+                    onClick={nextPage}
+                    className="bg-blue-500 p-2 text-white rounded-[5px]">Siguientes</button>
             </div>
         </>
     )

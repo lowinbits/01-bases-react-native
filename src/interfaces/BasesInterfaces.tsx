@@ -29,6 +29,10 @@ export interface User {
     email: string;
 }
 
+export interface Props {
+    user: User;
+}
+
 export interface UserListResponse {
     page: number;
     per_page: number;
